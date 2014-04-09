@@ -3,12 +3,12 @@
 App::uses('HtmlHelper', 'View/Helper');
 
 class UploadScriptHelper extends HtmlHelper {
-    
+
     /**
      * @return css and js path
-     * 
+     *
      */
-    public function loadLibs() {
+    public function loadLibs($inline = false) {
         //Lib css
         echo parent::css(
                 array(
@@ -16,7 +16,9 @@ class UploadScriptHelper extends HtmlHelper {
                     '/JqueryFileUpload/jQuery-File-Upload/css/jquery.fileupload-ui.css',
                     /* Bootstrap Image Gallery styles */
                     '/JqueryFileUpload/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css'
-                )
+                ), array(
+                'inline' => $inline
+            )
         );
 
         //Lib js
@@ -27,7 +29,7 @@ class UploadScriptHelper extends HtmlHelper {
                     /* The Templates plugin is included to render the upload/download listings */
                     '/JqueryFileUpload/JavaScript-Templates/tmpl.min.js',
                     /* The Load Image plugin is included for the preview images and image resizing functionality */
-                    '/JqueryFileUpload/JavaScript-Load-Image/load-image.min.js',                                        
+                    '/JqueryFileUpload/JavaScript-Load-Image/load-image.min.js',
                     /* The Canvas to Blob plugin is included for image resizing functionality */
                     '/JqueryFileUpload/JavaScript-Canvas-to-Blob/canvas-to-blob.min.js',
                     '/JqueryFileUpload/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js',
@@ -39,10 +41,10 @@ class UploadScriptHelper extends HtmlHelper {
                     '/JqueryFileUpload/jQuery-File-Upload/js/jquery.fileupload-fp.js',
                     /* The File Upload user interface plugin */
                     '/JqueryFileUpload/jQuery-File-Upload/js/jquery.fileupload-ui.js'
-                )
+                ), array(
+                'inline' => $inline
+            )
         );
     }
 
 }
-
-?>

@@ -32,7 +32,7 @@ class UploadTemplateHelper extends HtmlHelper {
          */
         $action_delete = isset($options['action_delete']) ? $options['action_delete'] : null;        
         $tmpl  = $this->_View->element('JqueryFileUpload.tmpl_files');
-        $tmpl .= $this->_View->element('JqueryFileUpload.tmpl_donwload', array('action_delete' => $action_delete));
+        $tmpl .= $this->_View->element('JqueryFileUpload.tmpl_download', array('action_delete' => $action_delete));
         return $tmpl;
     }
 
